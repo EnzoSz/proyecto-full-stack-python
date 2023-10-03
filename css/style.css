@@ -4,17 +4,22 @@
   box-sizing: border-box;
 }
 
+.logo {
+  text-align: center;
+}
+
 header {
   background-color: #e3d3c2;
   color: white;
-  padding: 15px;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 nav ul {
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
-  margin: 0;
+  margin: 20px 20px 12px 20px;
 }
 
 nav a {
@@ -25,6 +30,6 @@ nav a {
 nav a:hover {
   background-color: #b77752;
   color: white;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
