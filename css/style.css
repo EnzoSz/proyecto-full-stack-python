@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "MiFuente";
+}
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("../assets/font/Roboto-Light.ttf") format("truetype");
 }
 
 .logo {
@@ -9,8 +15,7 @@
 }
 
 header {
-  background-color: #e3d3c2;
-  color: white;
+  background-color: #b77752;
   padding-top: 20px;
   padding-bottom: 5px;
 }
@@ -24,27 +29,68 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: #382e2c;
 }
 
 nav a:hover {
-  background-color: #b77752;
-  color: white;
+  background-color: #e3d3c2;
+  color: #382e2c;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
+.h1index {
+  color: #b77752;
+  text-align: center;
+  margin: 20px 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main img {
+  width: 400px;
+  margin: 20px 20px;
+}
+
+.sectionindex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.caja1,
+.caja2 {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  background-color: #b77752;
+}
+
+.especial {
+  height: 150px;
+  margin: 15px 18px;
+}
+
+.delivery {
+  max-width: 100%;
+}
+
 .logo2 {
-  background-color: #e3d3c2;
-  color: white;
+  background-color: #b77752;
+  color: #382e2c;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 8px;
   text-align: center;
 }
 
 .productos {
   text-align: center;
-  color: #382e2c;
+  color: #b77752;
   margin: 20px;
 }
 
