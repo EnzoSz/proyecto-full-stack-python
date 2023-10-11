@@ -4,16 +4,41 @@
   box-sizing: border-box;
 }
 
-.logo {
-  text-align: center;
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins, Mulish', sans-serif;
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #e3d3c2;
   color: white;
   padding-top: 20px;
   padding-bottom: 5px;
 }
+.logo {
+  display: flex;
+  text-align: center;
+  margin-left: 1.0rem;
+  /* text-align: center; */
+}
+.logo img {
+  height: 100px;
+  width: auto;
+  margin-right: 1.2rem;
+  /* justify-content: left; */
+  /* margin: 10rem; */
+}
+
+h1 {
+  /* justify-content: center; */
+  font-size: 2.8rem;
+  text-align: center;
+  margin: auto;
+}
+
 
 nav ul {
   display: flex;
