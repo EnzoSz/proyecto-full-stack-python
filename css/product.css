@@ -1,0 +1,38 @@
+.logo2 {
+    background-color: #e3d3c2;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  
+  .productos {
+    text-align: center;
+    color: #382e2c;
+    margin: 20px;
+  }
+  
+  .listaPastas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    margin: auto;
+    width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .botoncompra {
+    background-color: #b77752;
+  }
+  
