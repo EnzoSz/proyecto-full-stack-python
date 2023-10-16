@@ -4,6 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
+    <link
+    rel="shortcut icon"
+    href="./assets/img/logo.ico"
+    type="image/x-icon"
+  />
+  <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="logo2">
+      <img
+        src="../assets/img/logo.jpeg"
+        alt="Logo del emprendimiento"
+        width="200px"
+      />
+
+      <nav>
+        <ul>
+          <li><strong><a href="../index.html">INICIO</a></strong></li>
+                    <li>
+            <strong><a href="pagina-2.html">LOGIN</a></strong>
+          </li>
+          <li>
+            <strong><a href="pagina-3.html">PRODUCTOS</a></strong>
+          </li>
+          <li>
+            <strong><a>CONTACTO</a></strong>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="h1contacto">¿En que podemos ayudarte?</h1>
+      <p>¡Estamos aquí para ayudarte! Completa el formulario a continuación y nos pondremos en contacto contigo pronto.</p>
+
+      <form id="contacto">
+          <label for="nombre"><b>Nombre:</b></label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Mariano Martin"><br>
+          <label for="correo"><b>Email:</b></label>
+          <input type="email" id="correo" name="correo" required placeholder="example@email.com"><br>
+          <label for="mensaje"><b>Mensaje:</b></label>
+          <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Su mensaje..."></textarea><br>
+          
+          <button type="submit" class="botonform" onclick=""><b>Enviar consulta</b></button>
+      </form>
+    </main>
+  </body>
 </html>
