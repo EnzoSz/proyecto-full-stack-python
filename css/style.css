@@ -39,7 +39,7 @@ nav a:hover {
   padding-bottom: 20px;
 }
 
-.h1index {
+.h1index, .h1contacto{
   color: #b77752;
   text-align: center;
   margin: 20px 20px;
@@ -114,6 +114,18 @@ main img {
   height: auto;
 }
 
-.botoncompra {
+.botoncompra, .botonform {
   background-color: #b77752;
+}
+
+#contacto {
+  padding: 20px 0;
+  margin: auto;
+  border: solid 2px #382e2c;
+  background-color: #e3d3c2
+}
+
+#contacto label, #contacto input{
+padding: 10px 0px;
+margin: 10px;
 }
