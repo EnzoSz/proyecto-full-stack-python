@@ -208,3 +208,41 @@ main img {
   padding: 10px 0px;
   margin: 10px;
 }
+
+.gridh2 {
+  grid-area: gridh2;
+  object-fit: cover;
+  background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+  color: #d8c690;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridimagen {
+  grid-area: gridimagen;
+  object-fit: cover;
+}
+.gridlogo {
+  grid-area: gridlogo;
+  object-fit: cover;
+  width: auto;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  margin-top: 45px;
+  margin-bottom: 60px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 75px 88px 88px 75px;
+  grid-template-rows: 100px 100px 100px 180px;
+  gap: 10px;
+  grid-template-areas:
+    "gridh2 gridh2 gridh2 gridh2"
+    "gridimagen gridimagen gridimagen gridimagen "
+    "gridimagen gridimagen gridimagen gridimagen"
+    ". gridlogo gridlogo .";
+}
