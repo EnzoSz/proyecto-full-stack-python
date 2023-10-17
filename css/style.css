@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "MiFuente";
+  font-family: "Poppins, Mulish", sans-serif;
 }
 
 html {
-  font-size: 62.5%;
-  font-family: "Poppins, Mulish", sans-serif;
+  font-size: 90%;
 }
 
 header {
@@ -15,8 +14,6 @@ header {
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
-  /* padding-top: 20px;
-  padding-bottom: 5px; */
   margin: 0;
   padding: 0;
 }
@@ -25,23 +22,21 @@ header {
   text-align: center;
   margin-top: 1rem;
   margin-left: 1rem;
-  /* text-align: center; */
 }
 .logo img {
   height: 150px;
   width: auto;
   margin-right: 1.2rem;
   border-radius: 80px;
-  /* justify-content: left; */
-  /* margin: 10rem; */
 }
 
 h1 {
-  /* justify-content: center; */
-  font-size: 3.8rem;
-  color: #d8c690;
+  font-size: 3rem;
+  color: #92804b;
   text-align: center;
   margin: auto;
+  margin-top: 35px;
+  margin-bottom: 45px;
 }
 
 nav {
@@ -75,7 +70,6 @@ nav a:hover {
   background-color: #cbb26a;
   color: black;
   padding: 10px;
-
   border-radius: 5px;
 }
 
@@ -89,12 +83,6 @@ nav a:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
-}
-
-.productos {
-  text-align: center;
-  color: #d8c690;
-  margin: 20px;
 }
 
 .listaPastas {
@@ -144,6 +132,7 @@ main img {
   text-align: center;
   padding: 20px;
   background-color: #d8c690;
+  margin-bottom: 25px;
 }
 
 .especial {
@@ -161,12 +150,6 @@ main img {
   padding-top: 20px;
   padding-bottom: 8px;
   text-align: center;
-}
-
-.productos {
-  text-align: center;
-  color: #d8c690;
-  margin: 20px;
 }
 
 .listaPastas {
