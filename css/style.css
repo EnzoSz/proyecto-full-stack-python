@@ -184,6 +184,7 @@ main img {
   margin-top: 45px;
   border: solid 2px #382e2c;
   background-color: #d8c690;
+  margin-bottom: 60px;
 }
 
 #contacto label,
@@ -228,4 +229,13 @@ main img {
     "gridimagen gridimagen gridimagen gridimagen "
     "gridimagen gridimagen gridimagen gridimagen"
     ". gridlogo gridlogo .";
+}
+
+.footer {
+  background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+  color: #d8c690;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
