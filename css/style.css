@@ -50,6 +50,7 @@ nav .lista-nav {
   list-style-type: none;
   margin: 20px 0px 10px 0px;
 }
+
 .lista-nav li {
   color: #d8c690;
   font-weight: 500;
@@ -63,18 +64,23 @@ nav a {
   text-decoration: none;
   color: #d8c690;
   transition: color 0.3s, padding 0.3s;
-  padding: 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 nav a:hover {
   background-color: #cbb26a;
   color: black;
-  padding: 10px;
-  border-radius: 5px;
+  /* padding: 10px;
+  border-radius: 5px; */
 }
 
 .iconos {
   filter: hue-rotate(160deg);
+}
+
+nav a i {
+  color: #d8c690;
 }
 
 .logo2 {
