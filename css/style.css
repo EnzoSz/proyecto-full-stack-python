@@ -9,6 +9,17 @@ html {
   font-size: 90%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -17,6 +28,7 @@ header {
   margin: 0;
   padding: 0;
 }
+
 .logo {
   display: flex;
   text-align: center;
@@ -71,8 +83,6 @@ nav a {
 nav a:hover {
   background-color: #cbb26a;
   color: black;
-  /* padding: 10px;
-  border-radius: 5px; */
 }
 
 .iconos {
@@ -213,6 +223,7 @@ main img {
   grid-area: gridimagen;
   object-fit: cover;
 }
+
 .gridlogo {
   grid-area: gridlogo;
   object-fit: cover;
@@ -238,6 +249,7 @@ main img {
 }
 
 .footer {
+  margin-top: auto;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
   color: #d8c690;
   display: flex;
