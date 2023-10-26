@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins, Mulish", sans-serif;
+}
+
+html {
+  font-size: 90%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  display: flex;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.logo img {
+  height: 150px;
+  width: auto;
+  margin-right: 1.2rem;
+  border-radius: 80px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #92804b;
+  text-align: center;
+  margin: auto;
+  margin-top: 35px;
+  margin-bottom: 45px;
+}
+
+nav {
+  margin: 0;
+}
+
+nav .lista-nav {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
+  list-style-type: none;
+  margin: 20px 0px 10px 0px;
+}
+
+.lista-nav li {
+  color: #d8c690;
+  font-weight: 500;
+}
+
+.lista-nav img {
+  height: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #d8c690;
+  transition: color 0.3s, padding 0.3s;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #cbb26a;
+  color: black;
+  /* padding: 10px;
+  border-radius: 5px; */
+}
+
+.iconos {
+  filter: hue-rotate(160deg);
+}
+
+nav a i {
+  color: #d8c690;
+}
+
+.logo2 {
+  background-color: #e3d3c2;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.listaPastas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  margin: auto;
+  width: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.botoncompra {
+  background-color: #d8c690;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main img {
+  width: 400px;
+  margin: 20px 20px;
+}
+
+.sectionindex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.caja1,
+.caja2 {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  background-color: #d8c690;
+  margin-bottom: 25px;
+}
+
+.especial {
+  height: 150px;
+  margin: 15px 18px;
+}
+
+.delivery {
+  max-width: 100%;
+}
+
+.logo2 {
+  background-color: #b77752;
+  color: #382e2c;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.listaPastas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  margin: auto;
+  width: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.botoncompra,
+.botonform {
+  background-color: #382e2c;
+  color: #d8c690;
+  margin-top: 15px;
+}
+
+#contacto {
+  padding: 20px 0;
+  margin-top: 45px;
+  border: solid 2px #382e2c;
+  background-color: #d8c690;
+  margin-bottom: 60px;
+}
+
+#contacto label,
+#contacto input {
+  padding: 10px 0px;
+  margin: 10px;
+}
+
+.gridh2 {
+  grid-area: gridh2;
+  object-fit: cover;
+  background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+  color: #d8c690;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridimagen {
+  grid-area: gridimagen;
+  object-fit: cover;
+}
+.gridlogo {
+  grid-area: gridlogo;
+  object-fit: cover;
+  width: auto;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  margin-top: 45px;
+  margin-bottom: 60px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 75px 88px 88px 75px;
+  grid-template-rows: 100px 100px 100px 180px;
+  gap: 10px;
+  grid-template-areas:
+    "gridh2 gridh2 gridh2 gridh2"
+    "gridimagen gridimagen gridimagen gridimagen "
+    "gridimagen gridimagen gridimagen gridimagen"
+    ". gridlogo gridlogo .";
+}
+
+.footer {
+  background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+  color: #d8c690;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
