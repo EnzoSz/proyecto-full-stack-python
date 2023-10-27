@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "foto": "../assets/img/fideos.jpg",
+    "nombre": "Fideos",
+    "precio": 1600,
+    "descripcion": "Deliciosos fideos frescos hechos a mano. Al puro huevo."
+  },
+  {
+    "id": 2,
+    "foto": "../assets/img/fideosVerdes.jpg",
+    "nombre": "Fideos de Espinaca",
+    "precio": 1800,
+    "descripcion": "Deliciosos fideos frescos hechos a mano. Al puro huevo."
+  },
+  {
+    "id": 3,
+    "foto": "../assets/img/ravioles.jpg",
+    "nombre": "Ravioles",
+    "precio": 2100,
+    "descripcion": "Deliciosos ravioles frescos hechos a mano."
+  },
+  {
+    "id": 4,
+    "foto": "../assets/img/ñoquis.jpg",
+    "nombre": "Ñoquis",
+    "precio": 1900,
+    "descripcion": "Deliciosos ñoquis frescos hechos a mano."
+  },
+  {
+    "id": 5,
+    "foto": "../assets/img/ñoquis.jpg",
+    "nombre": "Ñoquis",
+    "precio": 1900,
+    "descripcion": "Deliciosos ñoquis frescos hechos a mano."
+  },
+  {
+    "id": 6,
+    "foto": "../assets/img/ñoquis.jpg",
+    "nombre": "Ñoquis",
+    "precio": 1900,
+    "descripcion": "Deliciosos ñoquis frescos hechos a mano."
+  }
+]

@@ -9,7 +9,10 @@
       href="../assets/img/logo.ico"
       type="image/x-icon"
     />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -31,9 +34,7 @@
             <a href="./pagina-3.html">¿EN QUE PODEMOS AYUDARTE?</a>
           </li>
           <li>
-            <a href="#">
-              <i class="icon-shopping-cart"></i>
-            </a>
+            <i id="carrito" class="icon-shopping-cart"></i>
           </li>
           <li>
             <a href="#">
@@ -46,33 +47,35 @@
 
     <main>
       <div><h1 class="productos">PRODUCTOS</h1></div>
-      <div id="listaPastas"></div>
+      <div id="listaPastas" class="listaPastas"></div>
+  <!--     <div class="grid">
+        <img
+          class="gridimagen"
+          src="../assets/img/pastasCaseras2.jpg"
+          alt="Pastas Caseras"
+          height="210px"
+          width="356px"
+        />
+        <h3 class="gridh2">PASTAS CASERAS EN TU CASA..</h3>
+        <a href="../index.html" class="gridlogo">
+          <img src="../assets/PASTA D´FAMIGLIA1.png" alt="Logo"
+        /></a>
+      </div> -->
+       <!--modal carrito-->
+    <section id="modal-container" class="modal-container"></section>
+
     </main>
 
-    <div class="grid">
-      <img
-        class="gridimagen"
-        src="../assets/img/pastasCaseras2.jpg"
-        alt="Pastas Caseras"
-        height="210px"
-        width="356px"
-      />
-      <h3 class="gridh2">PASTAS CASERAS EN TU CASA..</h3>
-      <a href="../index.html" class="gridlogo">
-        <img
-            src="../assets/PASTA D´FAMIGLIA1.png"
-            alt="Logo"
-        /></a>
-    </div>
-
-    <footer class="footer"> 
+    <footer class="footer">
       <p>
-        Copyright Grupo 11. Comision 23501 - 2023. Todos los derechos reservados. <br/>
-        Defensa de consumidores. Para reclamos <strong>ingrese aquí<strong/>.
+        Copyright Grupo 11. Comision 23501 - 2023. Todos los derechos
+        reservados. <br />
+        Defensa de consumidores. Para reclamos <strong>ingrese aquí</strong>.
       </p>
     </footer>
 
-    <script src="../productos.js"></script>
-    <script src="../codigo.js"></script>
+    <script type="module" src="../productos.js"></script>
+    <script type="module" src="../codigo.js"></script>
+    <!-- <script src="../carritoCompras.js"></script> -->
   </body>
 </html>
