@@ -29,16 +29,16 @@
   },
   {
     "id": 5,
-    "foto": "../assets/img/ñoquis.jpg",
-    "nombre": "Ñoquis",
-    "precio": 1900,
-    "descripcion": "Deliciosos ñoquis frescos hechos a mano."
+    "foto": "../assets/img/ñoquisEspinaca.jpg",
+    "nombre": "Ñoquis de Espinaca",
+    "precio": 2300,
+    "descripcion": "Deliciosos ñoquis frescos de Espinaca hechos a mano."
   },
   {
     "id": 6,
-    "foto": "../assets/img/ñoquis.jpg",
-    "nombre": "Ñoquis",
-    "precio": 1900,
-    "descripcion": "Deliciosos ñoquis frescos hechos a mano."
+    "foto": "../assets/img/ñoquisRemolacha.jpg",
+    "nombre": "Ñoquis de Remolacha",
+    "precio": 2500,
+    "descripcion": "Deliciosos ñoquis frescos de Remolacha hechos a mano."
   }
 ]

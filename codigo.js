@@ -52,7 +52,8 @@ importarProductos().then((data) => {
 // logica para mostrar el carrito en el html
 
 //escuchador del evento para mostrar el carrito
-verCarrito.addEventListener("click", async() => {
+
+verCarrito.addEventListener("click", async () => {
   console.log("funciona");
   const modalHeader = document.createElement("div");
   modalHeader.className = "modal-header";
@@ -70,7 +71,6 @@ verCarrito.addEventListener("click", async() => {
   modalHeader.appendChild(modalButton);
 
   carrito.forEach((producto) => {
-
     const modalBody = document.createElement("div");
     modalBody.className = "modal-body";
     modalBody.innerHTML = `
@@ -90,4 +90,3 @@ verCarrito.addEventListener("click", async() => {
   <h5 class="modal-title">Total: $ ${total}</h5>`;
   contenedorModal.appendChild(modalFooter);
 });
-

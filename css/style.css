@@ -6,11 +6,8 @@
 }
 
 html {
-
   font-size: 62.5%;
   font-family: "Poppins, Mulish", sans-serif;
-
-
 }
 
 /* Header */
@@ -21,24 +18,21 @@ header {
   justify-content: space-between;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
 
-
   margin: 0;
   padding: 0;
 }
+
 .logo {
   display: flex;
   text-align: center;
   margin-top: 1rem;
   margin-left: 1rem;
-
-
 }
 .logo img {
   height: 150px;
   width: auto;
   margin-right: 1.2rem;
   border-radius: 80px;
-
 }
 
 h1 {
@@ -48,7 +42,6 @@ h1 {
   margin: auto;
   margin-top: 35px;
   margin-bottom: 45px;
-
 }
 
 nav {
@@ -62,8 +55,6 @@ nav .lista-nav {
   list-style-type: none;
   margin: 20px 0px 10px 0px;
 }
-
-
 
 .lista-nav li {
   color: #d8c690;
@@ -81,27 +72,19 @@ nav a {
   transition: color 0.3s, padding 0.3s;
   padding: 10px;
   border-radius: 5px;
-
 }
 
 nav a:hover {
   background-color: #cbb26a;
   color: black;
-
-
-  /* padding: 10px;
-  border-radius: 5px; */
-
 }
 
 .iconos {
   filter: hue-rotate(160deg);
-
 }
 
 nav a i {
   color: #d8c690;
-
 }
 
 .logo2 {
@@ -118,7 +101,8 @@ nav a i {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2.0rem 2.0rem;
+
+  margin: 2rem 2rem;
 }
 
 .card {
@@ -132,7 +116,8 @@ nav a i {
 }
 
 .card .card-img-top {
-  margin: 2.0rem 1rem;
+  margin: 2rem 1rem;
+
   height: 200px;
   width: auto;
   border-radius: 5px;
@@ -143,25 +128,29 @@ div .card-body {
   /* justify-content: space-between; */
   align-items: center;
   /* padding: 0 1rem; */
-  margin-top: 2.0rem;
-  margin-bottom: 2.0rem;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .card-body h3 {
-  font-size: 3.0rem;
+  font-size: 3rem;
   color: #382e2c;
-  margin-bottom: 1.0rem;
+  margin-bottom: 1rem;
 }
-.card-body  .card-descrip{
+.card-body .card-descrip {
   font-size: 1.5rem;
   color: #382e2c;
-  margin: 1.0rem;
+  margin: 1rem;
+
   text-justify: auto;
 }
 .card-body .card-precio {
   font-weight: bold;
-  font-size: 2.0rem;
+
+  font-size: 2rem;
   color: #382e2c;
-  margin: 1.0rem;
+  margin: 1rem;
+
   margin-bottom: 3px;
   text-justify: auto;
 }
@@ -184,7 +173,7 @@ div .card-body {
 }
 /* carrito */
 .modal-container {
-   /* display: none;  */
+  /* display: none;  */
   /* position: fixed; */
   z-index: 1;
   left: 0;
@@ -230,18 +219,18 @@ div .card-body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2.0rem;
-  margin-bottom: 2.0rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .modal-body .card-body .card-title {
-  font-size: 2.0rem;
+  font-size: 2rem;
   color: #382e2c;
-  margin-bottom: 1.0rem;
+  margin-bottom: 1rem;
 }
 .modal-body .card-body .card-precio {
   font-size: 1.5rem;
   color: #382e2c;
-  margin: 1.0rem;
+  margin: 1rem;
   text-justify: auto;
 }
 .modal-footer {
@@ -257,7 +246,6 @@ div .card-body {
   font-weight: bold;
 }
 
-
 /* -------------------------------------- */
 
 main {
@@ -271,6 +259,8 @@ main img {
   width: 400px;
   margin: 20px 20px;
 }
+
+/* index */
 
 .sectionindex {
   display: flex;
@@ -304,26 +294,7 @@ main img {
   text-align: center;
 }
 
-/* .listaPastas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-} */
-
-/* .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
-  margin: auto;
-  width: 450px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
-
-/* .card img {
-  max-width: 100%;
-  height: auto;
-} */
-
+/* formulario */
 
 .botonform {
   background-color: #382e2c;
@@ -336,7 +307,7 @@ main img {
   margin-top: 45px;
   border: solid 2px #382e2c;
   background-color: #d8c690;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 #contacto label,
@@ -344,6 +315,8 @@ main img {
   padding: 10px 0px;
   margin: 10px;
 }
+
+/* grid */
 
 .gridh2 {
   grid-area: gridh2;
@@ -359,6 +332,7 @@ main img {
   grid-area: gridimagen;
   object-fit: cover;
 }
+
 .gridlogo {
   grid-area: gridlogo;
   object-fit: cover;
@@ -383,11 +357,62 @@ main img {
     ". gridlogo gridlogo .";
 }
 
+/* whatsapp button */
+
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#whatsapp-button a {
+  display: block;
+  background-color: #d8c690;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#whatsapp-button img {
+  width: 40px;
+}
+
+/* footer  */
+
 .footer {
+  margin-top: auto;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
   color: #d8c690;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
+}
+
+.footiconos {
+  margin-bottom: 15px;
+}
+
+.footer i {
+  color: #d8c690;
+  margin-right: 10px;
+}
+
+/* media queries  */
+
+@media (max-width: 900px) {
+  .lista-nav {
+    flex-direction: column;
+  }
+  .sectionindex {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .h1index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }

@@ -14,12 +14,14 @@ function importarProductos() {
 
 module.exports = { importarProductos }; */
 function importarProductos() {
+  // Definimos la ruta del archivo
   const rutaArchivo = '../data/pastas.json';
   return fetch(rutaArchivo)
     .then(response => response.json()) //indicamos el formato en que queremos obtener la informacion
     .then(data => data); //data es el objeto que nos devuelve la promesa
 
   
+
 
 }
 
