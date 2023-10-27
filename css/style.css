@@ -20,6 +20,8 @@ main {
   flex: 1;
 }
 
+/* header */
+
 header {
   display: flex;
   flex-direction: column;
@@ -101,29 +103,166 @@ nav a i {
   text-align: center;
 }
 
+/* productos */
+
 .listaPastas {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: 2rem 2rem;
 }
 
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 30px;
-  margin: auto;
-  width: 450px;
+  /* padding: 20px; */
+  margin: 1rem 1rem;
+  height: 450px;
+  width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card img {
-  max-width: 100%;
-  height: auto;
+.card .card-img-top {
+  margin: 2rem 1rem;
+  height: 200px;
+  width: auto;
+  border-radius: 5px;
+}
+div .card-body {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* padding: 0 1rem; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.card-body h3 {
+  font-size: 3rem;
+  color: #382e2c;
+  margin-bottom: 1rem;
+}
+.card-body .card-descrip {
+  font-size: 1.5rem;
+  color: #382e2c;
+  margin: 1rem;
+  text-justify: auto;
+}
+.card-body .card-precio {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #382e2c;
+  margin: 1rem;
+  margin-bottom: 3px;
+  text-justify: auto;
+}
+.botonAgregar {
+  background-color: #382e2c;
+  color: #d8c690;
+  margin-top: 0;
+  /* margin-bottom: px; */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
 }
 
-.botoncompra {
+.botonAgregar:hover {
   background-color: #d8c690;
+  color: #382e2c;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* carrito */
+
+.modal-container {
+  /* display: none;  */
+  /* position: fixed; */
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #382e2c;
+  color: #d8c690;
+}
+
+.modal-header .modal-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.modal-header .btn-close {
+  font-size: 2.5rem;
+  color: #d8c690;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #d8c690;
+  color: #382e2c;
+}
+
+.modal-body .car-img-top {
+  height: 200px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.modal-body .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-body .card-body .card-title {
+  font-size: 2rem;
+  color: #382e2c;
+  margin-bottom: 1rem;
+}
+
+.modal-body .card-body .card-precio {
+  font-size: 1.5rem;
+  color: #382e2c;
+  margin: 1rem;
+  text-justify: auto;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #382e2c;
+  color: #d8c690;
+}
+
+.modal-footer .modal-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* main */
+
 main {
   display: flex;
   flex-direction: column;
@@ -135,6 +274,8 @@ main img {
   width: 400px;
   margin: 20px 20px;
 }
+
+/* index */
 
 .sectionindex {
   display: flex;
@@ -168,27 +309,8 @@ main img {
   text-align: center;
 }
 
-.listaPastas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+/* formulario */
 
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
-  margin: auto;
-  width: 450px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-}
-
-.botoncompra,
 .botonform {
   background-color: #382e2c;
   color: #d8c690;
@@ -208,6 +330,8 @@ main img {
   padding: 10px 0px;
   margin: 10px;
 }
+
+/* grid */
 
 .gridh2 {
   grid-area: gridh2;
@@ -248,6 +372,8 @@ main img {
     ". gridlogo gridlogo .";
 }
 
+/* whatsapp button */
+
 #whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -265,6 +391,8 @@ main img {
 #whatsapp-button img {
   width: 40px;
 }
+
+/* footer  */
 
 .footer {
   margin-top: auto;
@@ -284,6 +412,8 @@ main img {
   color: #d8c690;
   margin-right: 10px;
 }
+
+/* media queries  */
 
 @media (max-width: 900px) {
   .lista-nav {
