@@ -262,8 +262,25 @@ main img {
 
 /* carousel */
 
-.cd-block w-100 {
-  width: 400px;
+.carousel-inner {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.carouselimg {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+}
+
+.carousel-control-prev {
+  margin-left: auto;
+}
+
+.carousel-control-next {
+  margin-right: auto;
 }
 
 /* section index */
@@ -346,6 +363,10 @@ main img {
   height: 180px;
   display: flex;
   justify-content: center;
+}
+
+.gridlogo:hover {
+  transform: scale(1.05);
 }
 
 .grid {
