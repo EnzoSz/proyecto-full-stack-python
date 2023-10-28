@@ -260,7 +260,13 @@ main img {
   margin: 20px 20px;
 }
 
-/* index */
+/* carousel */
+
+.cd-block w-100 {
+  width: 400px;
+}
+
+/* section index */
 
 .sectionindex {
   display: flex;

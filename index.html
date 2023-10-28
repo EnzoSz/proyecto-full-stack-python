@@ -25,6 +25,9 @@
       href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -80,6 +83,54 @@
       </p>
     </main>
 
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="d-block w-100"
+            src="./assets/img/fideos.jpg"
+            alt="First slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/img/ravioles.jpg"
+            alt="Second slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/img/ñoquis.jpg"
+            alt="Third slide"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
     <section class="sectionindex">
       <div class="caja1">
         <img class="delivery" src="./assets/img/delivery.png" alt="Delivery" />
@@ -101,14 +152,12 @@
     </section>
 
     <footer class="footer">
+      <div id="whatsapp-button" class="whatsapp-button">
+        <a href="https://wa.me/2243498597" target="_blank">
+          <img src="../assets/img/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
 
-    <div id="whatsapp-button" class="whatsapp-button">
-      <a href="https://wa.me/2243498597" target="_blank">
-        <img src="../assets/img/whatsapp.png" alt="WhatsApp" />
-      </a>
-    </div>
-
-    
       <div class="footiconos">
         <i class="icon-envelope"></i>
         <i class="icon-facebook"></i>
@@ -122,11 +171,10 @@
       </p>
     </footer>
 
-
     <!-- <script src="productos.js"></script> -->
     <!-- <script src="carritoCompras.js"></script> -->
+
     <script type="module" src="codigo.js"></script>
     <script type="module" src="productos.js"></script>
-
   </body>
 </html>
