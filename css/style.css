@@ -275,7 +275,26 @@ main img {
   margin: 20px 20px;
 }
 
-/* index */
+/* carousel index
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+}
+
+.carouselimg {
+  width: 100%;
+  height: auto;
+} */
+
+/* section index */
 
 .sectionindex {
   display: flex;

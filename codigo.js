@@ -1,3 +1,5 @@
+// productos
+
 import { importarProductos } from "./productos.js";
 //capturo el contenedor del boton del carrito
 const verCarrito = document.querySelector("#carrito");
