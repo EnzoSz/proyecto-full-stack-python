@@ -17,7 +17,6 @@ header {
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
-
   margin: 0;
   padding: 0;
 }
@@ -28,6 +27,7 @@ header {
   margin-top: 1rem;
   margin-left: 1rem;
 }
+
 .logo img {
   height: 150px;
   width: auto;
@@ -50,7 +50,7 @@ nav {
 
 nav .lista-nav {
   display: flex;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   justify-content: space-evenly;
   list-style-type: none;
   margin: 20px 0px 10px 0px;
@@ -58,18 +58,14 @@ nav .lista-nav {
 
 .lista-nav li {
   color: #d8c690;
-  font-weight: 500;
-}
-
-.lista-nav img {
-  height: 25px;
+  height: 20px;
+  /* font-weight: 500; */
 }
 
 nav a {
   text-decoration: none;
-
   color: #d8c690;
-  transition: color 0.3s, padding 0.3s;
+  /* transition: color 0.3s, padding 0.3s; */
   padding: 10px;
   border-radius: 5px;
 }
@@ -85,14 +81,6 @@ nav a:hover {
 
 nav a i {
   color: #d8c690;
-}
-
-.logo2 {
-  background-color: #e3d3c2;
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
 }
 
 /* productos */
@@ -113,6 +101,7 @@ nav a i {
   height: 450px;
   width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 45px;
 }
 
 .card:hover {
@@ -469,6 +458,8 @@ main img {
   .lista-nav {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
   }
 
   nav a {
@@ -483,12 +474,13 @@ main img {
     color: black;
   }
 
-  .icon-shopping-cart {
-    margin-left: 10px;
+  .lista-nav li {
+    padding: 10px;
+    margin-bottom: 10px;
   }
 
-  .lista-nav li {
-    margin-bottom: 10px;
+  .icon-shopping-cart {
+    margin-left: 10px;
   }
 
   .carousel-control-prev,
