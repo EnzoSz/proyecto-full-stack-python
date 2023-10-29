@@ -115,6 +115,10 @@ nav a i {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
 .card .card-img-top {
   margin: 2rem 1rem;
 
@@ -183,6 +187,7 @@ div .card-body {
   /* overflow: auto; */
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -275,12 +280,16 @@ main img {
   display: block;
 }
 
-.carousel-control-prev {
-  margin-left: auto;
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  border: none;
+  margin: 250px 250px;
 }
 
-.carousel-control-next {
-  margin-right: auto;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #382e2c;
 }
 
 /* section index */
@@ -427,19 +436,118 @@ main img {
 
 /* media queries  */
 
-@media (max-width: 900px) {
-  .lista-nav {
-    flex-direction: column;
-  }
-  .sectionindex {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+@media (max-width: 1024px) {
   .h1index {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .sectionindex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+
+  .caja1 {
+    min-height: 276px;
+    min-width: 400px;
+  }
+
+  .caja2 {
+    min-width: 400px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin: 250px 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lista-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #d8c690;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    background-color: #cbb26a;
+    color: black;
+  }
+
+  .icon-shopping-cart {
+    margin-left: 10px;
+  }
+
+  .lista-nav li {
+    margin-bottom: 10px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin: 130px 130px;
+  }
+}
+
+@media (max-width: 375px) {
+  main img {
+    width: 300px;
+    margin: 20px 20px;
+  }
+
+  .carouselimg {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin: 40px 40px;
+  }
+
+  .sectionindex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 350px;
+  }
+
+  .caja1 {
+    min-width: 300px;
+  }
+
+  .caja2 {
+    min-width: 300px;
+  }
+
+  .grid {
+    margin-top: 45px;
+    margin-bottom: 60px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 65px 78px 78px 65px;
+    grid-template-rows: 100px 100px 100px 180px;
+    gap: 10px;
+    grid-template-areas:
+      "gridh2 gridh2 gridh2 gridh2"
+      "gridimagen gridimagen gridimagen gridimagen "
+      "gridimagen gridimagen gridimagen gridimagen"
+      ". gridlogo gridlogo .";
+  }
+
+  .gridimagen {
+    width: 316px;
   }
 }
