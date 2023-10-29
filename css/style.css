@@ -6,27 +6,18 @@
 }
 
 html {
-  font-size: 90%;
+  font-size: 62.5%;
+  font-family: "Poppins, Mulish", sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
-
-main {
-  flex: 1;
-}
-
-/* header */
+/* Header */
 
 header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(207.8deg, #000 16.69%, #cbb26a 100%);
+
   margin: 0;
   padding: 0;
 }
@@ -76,6 +67,7 @@ nav .lista-nav {
 
 nav a {
   text-decoration: none;
+
   color: #d8c690;
   transition: color 0.3s, padding 0.3s;
   padding: 10px;
@@ -109,6 +101,7 @@ nav a i {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   margin: 2rem 2rem;
 }
 
@@ -124,6 +117,7 @@ nav a i {
 
 .card .card-img-top {
   margin: 2rem 1rem;
+
   height: 200px;
   width: auto;
   border-radius: 5px;
@@ -134,6 +128,7 @@ div .card-body {
   /* justify-content: space-between; */
   align-items: center;
   /* padding: 0 1rem; */
+
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -146,13 +141,16 @@ div .card-body {
   font-size: 1.5rem;
   color: #382e2c;
   margin: 1rem;
+
   text-justify: auto;
 }
 .card-body .card-precio {
   font-weight: bold;
+
   font-size: 2rem;
   color: #382e2c;
   margin: 1rem;
+
   margin-bottom: 3px;
   text-justify: auto;
 }
@@ -168,15 +166,12 @@ div .card-body {
   text-align: center;
   width: 200px;
 }
-
 .botonAgregar:hover {
   background-color: #d8c690;
   color: #382e2c;
   transition: background-color 0.3s, color 0.3s;
 }
-
 /* carrito */
-
 .modal-container {
   /* display: none;  */
   /* position: fixed; */
@@ -188,7 +183,6 @@ div .card-body {
   /* overflow: auto; */
   background-color: rgba(0, 0, 0, 0.4);
 }
-
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -197,18 +191,15 @@ div .card-body {
   background-color: #382e2c;
   color: #d8c690;
 }
-
 .modal-header .modal-title {
   font-size: 2.5rem;
   font-weight: bold;
 }
-
 .modal-header .btn-close {
   font-size: 2.5rem;
   color: #d8c690;
   cursor: pointer;
 }
-
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -218,13 +209,11 @@ div .card-body {
   background-color: #d8c690;
   color: #382e2c;
 }
-
 .modal-body .car-img-top {
   height: 200px;
   width: auto;
   border-radius: 5px;
 }
-
 .modal-body .card-body {
   display: flex;
   flex-direction: column;
@@ -233,20 +222,17 @@ div .card-body {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
 .modal-body .card-body .card-title {
   font-size: 2rem;
   color: #382e2c;
   margin-bottom: 1rem;
 }
-
 .modal-body .card-body .card-precio {
   font-size: 1.5rem;
   color: #382e2c;
   margin: 1rem;
   text-justify: auto;
 }
-
 .modal-footer {
   display: flex;
   justify-content: space-between;
@@ -255,13 +241,12 @@ div .card-body {
   background-color: #382e2c;
   color: #d8c690;
 }
-
 .modal-footer .modal-title {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-/* main */
+/* -------------------------------------- */
 
 main {
   display: flex;
@@ -275,24 +260,28 @@ main img {
   margin: 20px 20px;
 }
 
-/* carousel index
+/* carousel */
 
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.slide {
-  display: none;
+.carousel-inner {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .carouselimg {
-  width: 100%;
-  height: auto;
-} */
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+}
+
+.carousel-control-prev {
+  margin-left: auto;
+}
+
+.carousel-control-next {
+  margin-right: auto;
+}
 
 /* section index */
 
@@ -374,6 +363,10 @@ main img {
   height: 180px;
   display: flex;
   justify-content: center;
+}
+
+.gridlogo:hover {
+  transform: scale(1.05);
 }
 
 .grid {

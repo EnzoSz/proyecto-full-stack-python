@@ -54,6 +54,7 @@ importarProductos().then((data) => {
 // logica para mostrar el carrito en el html
 
 //escuchador del evento para mostrar el carrito
+
 verCarrito.addEventListener("click", async () => {
   console.log("funciona");
   const modalHeader = document.createElement("div");
