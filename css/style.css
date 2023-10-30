@@ -50,7 +50,7 @@ nav {
 
 nav .lista-nav {
   display: flex;
-  /* font-size: 1.5rem; */
+  font-size: 1.5rem;
   justify-content: space-evenly;
   list-style-type: none;
   margin: 20px 0px 10px 0px;
@@ -59,7 +59,7 @@ nav .lista-nav {
 .lista-nav li {
   color: #d8c690;
   height: 20px;
-  /* font-weight: 500; */
+  font-weight: 500;
 }
 
 nav a {
