@@ -43,6 +43,32 @@ h1 {
   margin-top: 35px;
   margin-bottom: 45px;
 }
+.checkbtn {
+  background: none;
+  font-size: 10px;
+  float: right;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  top: 20px;
+  right: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none
+}
+.logo .menu {
+  /* font-size: 30px; */
+  /* color: #fff; */
+  /* float: right; */
+  height: 20px;
+  width: 20px;
+  /* fill: #fff; */
+  margin:40px ;
+  /* display: none; */
+}
 
 nav {
   margin: 0;
@@ -455,11 +481,19 @@ main img {
 }
 
 @media (max-width: 768px) {
+  .logo .logoimg {
+    height: 100px;
+  }
+  .logo h1 {
+    font-size: 2rem;
+  }
+ 
   .lista-nav {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     padding-left: 0;
+    font-size: 1.0rem;
   }
 
   nav a {
@@ -489,7 +523,44 @@ main img {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
+  .logo .logoimg {
+    display: none;
+  }
+  .logo .menu {
+    display: block;
+  }
+  .checkbtn {
+    display: block;
+  }
+  nav .lista-nav {
+    /* position: fixed; */
+    flex-direction: column;
+    display: none;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    align-items: center;
+    text-align: center;
+    /* left: -100%; */
+    transition: all .5s;
+  }
+  nav .lista-nav li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .lista-nav li a {
+    font-size: 20px;
+  }
+  #menuBoton:checked ~  .lista-nav {
+    display: block;
+  }
+  /* #menuBoton:checked ~ .checkbtn::before {
+    transform: translateY(10px) rotate(45deg);
+} */
+
   main img {
     width: 300px;
     margin: 20px 20px;
