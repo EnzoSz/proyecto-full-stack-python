@@ -57,7 +57,7 @@ h1 {
   display: none;
 }
 #check {
-  display: none
+  display: none;
 }
 .logo .menu {
   /* font-size: 30px; */
@@ -66,7 +66,7 @@ h1 {
   height: 20px;
   width: 20px;
   /* fill: #fff; */
-  margin:40px ;
+  margin: 40px;
   /* display: none; */
 }
 
@@ -197,10 +197,11 @@ div .card-body {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   /* overflow: auto; */
   background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 50px;
 }
 
 .modal-header {
@@ -260,6 +261,7 @@ div .card-body {
   padding: 1.5rem;
   background-color: #382e2c;
   color: #d8c690;
+  margin-bottom: 20px;
 }
 .modal-footer .modal-title {
   font-size: 2.5rem;
@@ -351,6 +353,8 @@ main img {
 
 #contacto {
   padding: 20px 0;
+  padding-left: 70px;
+  padding-right: 70px;
   margin-top: 45px;
   border: solid 2px #382e2c;
   background-color: #d8c690;
@@ -487,13 +491,13 @@ main img {
   .logo h1 {
     font-size: 2rem;
   }
- 
+
   .lista-nav {
     display: flex;
     /* flex-direction: column; */
     align-items: flex-start;
     padding-left: 0;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 
   nav a {
@@ -544,7 +548,7 @@ main img {
     align-items: center;
     text-align: center;
     /* left: -100%; */
-    transition: all .5s;
+    transition: all 0.5s;
   }
   nav .lista-nav li {
     display: block;
@@ -554,7 +558,7 @@ main img {
   .lista-nav li a {
     font-size: 20px;
   }
-  #menuBoton:checked ~  .lista-nav {
+  #menuBoton:checked ~ .lista-nav {
     display: block;
   }
   /* #menuBoton:checked ~ .checkbtn::before {
