@@ -261,7 +261,7 @@ div .card-body {
   padding: 1.5rem;
   background-color: #382e2c;
   color: #d8c690;
-  margin-bottom: 20px;
+  border-bottom: 20px solid #d8c690;
 }
 .modal-footer .modal-title {
   font-size: 2.5rem;

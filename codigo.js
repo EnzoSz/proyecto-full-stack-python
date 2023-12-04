@@ -46,8 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: producto.nombre,
             precio: producto.precio,
           });
-          // llamo a la funcion para mostrar el carrito
-          console.log(carrito);
+          Swal.fire({
+            title: "Fantástico!",
+            text: `Agregaste ${producto.nombre} al carrito`,
+            imageUrl: producto.foto,
+            imageWidth: 130,
+            imageHeight: 130,
+            imageAlt: producto.nombre,
+            confirmButtonColor: "#382e2c",
+          });
         });
       });
     } else {
