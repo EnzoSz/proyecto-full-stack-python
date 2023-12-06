@@ -1,17 +1,90 @@
 //productos
 import { importarProductos } from "./productos.js";
 
+let contadorCarrito = 0;
+let contadorCarritoSpan;
+
+function actualizarContadorCarrito() {
+  contadorCarritoSpan.textContent = contadorCarrito.toString();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  let carrito = [];
+  let ordenDeCompra = null;
+  let observer = null;
+  let totalDiv;
+
   //capturo el contenedor del boton del carrito
   const verCarrito = document.querySelector("#carrito");
   //capturo el contenedor de carrito
   const contenedorModal = document.querySelector("#modal-container");
   //variable para guardar los productos en el carrito
-  let carrito = [];
+  contadorCarritoSpan = document.querySelector("#carrito");
+
+  // Función para iniciar el observer
+  function iniciarObserver() {
+    // Selecciona el nodo objetivo
+    const targetNode = ordenDeCompra;
+
+    // Opciones para el observer (configuración)
+    const config = { childList: true, subtree: true };
+
+    // Función de retorno de llamada para manejar los cambios observados
+    const callback = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          // Si hay un cambio en el contenido de la orden, actualiza el total
+          actualizarTotal();
+        }
+      }
+    };
+
+    // Crea un nuevo observer con la función de retorno de llamada y las opciones
+    observer = new MutationObserver(callback);
+
+    // Inicia la observación del nodo objetivo
+    observer.observe(targetNode, config);
+  }
+
+  // Función para detener el observer
+  function detenerObserver() {
+    if (observer) {
+      observer.disconnect();
+    }
+  }
+
+  // Función para actualizar el total
+  function actualizarTotal() {
+    if (!totalDiv) {
+      return;
+    }
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+    // const totalDiv = document.querySelector(".modal-footer .modal-title");
+    totalDiv.innerText = `Total: $ ${total}`;
+  }
+
+  let contenedorPastas;
+
+  // Recuperar el carrito desde el localStorage al cargar la página
+  const carritoGuardado = localStorage.getItem("carrito");
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    contadorCarrito = carrito.reduce((acc, el) => acc + el.cantidad, 0);
+    actualizarContadorCarrito();
+  }
 
   //logica para mostrar los productos en el html
   importarProductos().then((data) => {
-    let contenedorPastas = document.querySelector("#listaPastas");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    if (currentPage !== "index.html" && currentPage !== "pagina3.html") {
+      contenedorPastas = document.querySelector("#listaPastas");
+    }
+
+    // Actualiza el número en el ícono del carrito
+    function actualizarContadorCarrito() {
+      contadorCarritoSpan.textContent = contadorCarrito.toString();
+    }
 
     if (contenedorPastas) {
       data.forEach((producto) => {
@@ -39,13 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // escuchador de eventos para el boton comprar
         comprar.addEventListener("click", () => {
-          // agrego el producto al carrito
-          carrito.push({
-            id: producto.id,
-            img: producto.foto,
-            nombre: producto.nombre,
-            precio: producto.precio,
-          });
+          const productoEnCarrito = carrito.find((p) => p.id === producto.id);
+
+          if (productoEnCarrito) {
+            productoEnCarrito.cantidad += 1;
+          } else {
+            carrito.push({
+              id: producto.id,
+              img: producto.foto,
+              nombre: producto.nombre,
+              precio: producto.precio,
+              cantidad: 1,
+            });
+          }
+          // Almacenar el carrito en el localStorage
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          contadorCarrito++;
+          actualizarContadorCarrito();
           Swal.fire({
             title: "Fantástico!",
             text: `Agregaste ${producto.nombre} al carrito`,
@@ -55,80 +138,126 @@ document.addEventListener("DOMContentLoaded", () => {
             imageAlt: producto.nombre,
             confirmButtonColor: "#382e2c",
           });
+          actualizarOrdenCompleta();
         });
       });
-    } else {
-      console.error("El contenedor de pastas no se encuentra en esta pagina.");
+    }
+
+    if (verCarrito) {
+      verCarrito.addEventListener("click", () => {
+        if (ordenDeCompra === null) {
+          ordenDeCompra = document.createElement("div");
+          ordenDeCompra.className = "modal-body";
+          contenedorModal.appendChild(ordenDeCompra);
+        }
+        iniciarObserver();
+        actualizarOrden();
+
+        contenedorModal.style.display = "block";
+
+        ordenDeCompra.scrollIntoView({ behavior: "smooth" });
+      });
     }
   });
 
-  if (verCarrito) {
-    // logica para mostrar el carrito en el html
+  function actualizarOrden() {
+    if (!ordenDeCompra) {
+      return;
+    }
+    ordenDeCompra.innerHTML = "";
 
-    //escuchador del evento para mostrar el carrito
+    const tituloOrden = document.createElement("h1");
+    tituloOrden.innerText = "Mi Orden de Compra";
+    ordenDeCompra.appendChild(tituloOrden);
 
-    verCarrito.addEventListener("click", async () => {
-      console.log("funciona");
-      const modalHeader = document.createElement("div");
-      modalHeader.className = "modal-header";
-      modalHeader.innerHTML = `
-  <h5 class="modal-title" id="exampleModalLabel">Mi Orden</h5> 
-  `;
-      contenedorModal.appendChild(modalHeader);
+    carrito.forEach((producto, index) => {
+      const productoDiv = document.createElement("div");
+      productoDiv.innerHTML = `
+        <img src="${producto.img}" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title">${producto.nombre}</h3>
+          <p class="card-precio">Precio $ ${producto.precio}</p>
+          <div class="cantidad-container">
+            <button class="btn-restar" data-index="${index}">Restar</button>
+            <p class="cantidad"> ${producto.cantidad}</p>
+            <button class="btn-sumar" data-index="${index}">Sumar</button>
+          </div>
+        </div>
+        <button class="btn-close" data-index="${index}">X</button>
+      `;
+      ordenDeCompra.appendChild(productoDiv);
 
-      const modalButton = document.createElement("button");
-      modalButton.className = "btn-close";
-      modalButton.innerText = "X";
-      modalButton.addEventListener("click", () => {
-        contenedorModal.style.display = "none"; //oculto el modal
-      });
-      modalHeader.appendChild(modalButton);
-
-      carrito.forEach((producto, index) => {
-        const modalBody = document.createElement("div");
-        modalBody.className = "modal-body";
-        modalBody.innerHTML = `
-    <img src="${producto.img}" class="card-img-top">
-    <div class="card-body">
-        <h3 class="card-title">${producto.nombre}</h3>
-        <p class="card-precio">Precio $ ${producto.precio}</p>
-    </div>
-    <button class="btn-close" data-index="${index}">X</button>
-  `;
-        contenedorModal.appendChild(modalBody);
-
-        // Obtener el botón de cierre específico para esta orden
-        const closeButton = modalBody.querySelector(".btn-close");
-
-        // Escuchador de eventos para el botón de cierre
-        closeButton.addEventListener("click", (event) => {
-          // Obtener el índice desde el atributo data-index del botón clickeado
-          const dataIndex = closeButton.getAttribute("data-index");
-
-          // Verificar que el índice sea válido antes de eliminar
-          if (dataIndex !== null) {
-            const indexToDelete = parseInt(dataIndex, 10);
-            carrito.splice(indexToDelete, 1); // Eliminar la orden del array
-            modalBody.remove(); // Eliminar el elemento del DOM
-            actualizarTotal(); // Actualizar el total después de eliminar
-          }
-        });
+      const sumarButton = productoDiv.querySelector(".btn-sumar");
+      sumarButton.addEventListener("click", () => {
+        carrito[index].cantidad += 1;
+        actualizarOrden();
       });
 
-      const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-      const modalFooter = document.createElement("div");
-      modalFooter.className = "modal-footer";
-      modalFooter.innerHTML = `
-  <h5 class="modal-title">Total: $ ${total}</h5>`;
-      contenedorModal.appendChild(modalFooter);
+      const restarButton = productoDiv.querySelector(".btn-restar");
+      restarButton.addEventListener("click", () => {
+        if (carrito[index].cantidad > 1) {
+          carrito[index].cantidad -= 1;
+        } else {
+          carrito.splice(index, 1);
+        }
+        actualizarOrden();
+      });
+
+      const closeButton = productoDiv.querySelector(".btn-close");
+      closeButton.addEventListener("click", () => {
+        const indexToDelete = parseInt(
+          closeButton.getAttribute("data-index"),
+          10
+        );
+        carrito.splice(indexToDelete, 1);
+        actualizarOrden();
+
+        contadorCarrito--;
+        // actualizarContadorCarrito();
+      });
     });
+
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+    const totalDiv = document.createElement("div");
+    totalDiv.className = "modal-footer";
+    totalDiv.innerHTML = `<h5 class="modal-title">Total: $ ${total}</h5>`;
+    ordenDeCompra.appendChild(totalDiv);
+
+    const finalizarBtn = document.createElement("button");
+    finalizarBtn.id = "finalizar";
+    finalizarBtn.innerText = "Finalizar Compra";
+    ordenDeCompra.appendChild(finalizarBtn);
+
+    finalizarBtn.onclick = () => {
+      Toastify({
+        text: "Gracias por tu compra! Ya empezamos a preparar tu pedido",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        close: true,
+        style: {
+          background: "#737375",
+        },
+        offset: {
+          x: 150,
+          y: 110,
+        },
+      }).showToast();
+
+      ordenDeCompra.innerHTML = "";
+      ordenDeCompra = null;
+
+      contadorCarrito = 0;
+      actualizarContadorCarrito();
+
+      carrito = [];
+      detenerObserver();
+    };
   }
 
-  // Función para actualizar el total después de eliminar una orden
-  function actualizarTotal() {
-    const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-    const modalFooter = contenedorModal.querySelector(".modal-footer");
-    modalFooter.innerHTML = `
-    <h5 class="modal-title">Total: $ ${total}</h5>`;
+  // Función para actualizar la orden completa
+  function actualizarOrdenCompleta() {
+    actualizarOrden();
+    actualizarTotal();
   }
 });
