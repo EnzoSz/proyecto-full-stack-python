@@ -1,10 +1,14 @@
 //productos
 import { importarProductos } from "./productos.js";
 
+let contadorCarrito = 0;
 let contadorCarritoSpan;
 
+function actualizarContadorCarrito() {
+  contadorCarritoSpan.textContent = contadorCarrito.toString();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  let contadorCarrito = 0;
   let carrito = [];
   let ordenDeCompra = null;
   let observer = null;
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //capturo el contenedor de carrito
   const contenedorModal = document.querySelector("#modal-container");
   //variable para guardar los productos en el carrito
-  const contadorCarritoSpan = document.querySelector("#carrito");
+  contadorCarritoSpan = document.querySelector("#carrito");
 
   // Función para iniciar el observer
   function iniciarObserver() {
@@ -199,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarOrden();
 
         contadorCarrito--;
-        actualizarContadorCarrito();
+        // actualizarContadorCarrito();
       });
     });
 
