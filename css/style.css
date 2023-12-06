@@ -274,7 +274,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 main img {
@@ -345,28 +345,93 @@ main img {
 
 /* formulario */
 
-.botonform {
+.main-contacto-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #382e2c;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.main-contacto-description {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #382e2c;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contacto-form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background-color: #d8c690;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.personal-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: none;
+}
+
+.personal-info-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.personal-info-input input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #382e2c;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.personal-info-input input:focus {
+  outline: none;
+  border: 1px solid #382e2c;
+}
+.personal-info-input label {
+  font-size: 1.5rem;
+  color: #382e2c;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.message-info {
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+}
+.message-info textarea {
+  outline: none;
+  width: 100%;
+  min-width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #382e2c;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.contacto-form-button {
+  cursor: pointer;
   background-color: #382e2c;
   color: #d8c690;
-  margin-top: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 0.5rem;
 }
-
-#contacto {
-  padding: 20px 0;
-  padding-left: 70px;
-  padding-right: 70px;
-  margin-top: 45px;
-  border: solid 2px #382e2c;
-  background-color: #d8c690;
-  margin-bottom: 20px;
+.contacto-form-button:hover {
+  background-color: #c5a84f;
+  color: #382e2c;
+  transition: background-color 0.3s, color 0.3s;
 }
-
-#contacto label,
-#contacto input {
-  padding: 10px 0px;
-  margin: 10px;
-}
-
 /* grid */
 
 .gridh2 {

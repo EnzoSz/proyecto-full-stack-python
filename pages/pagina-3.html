@@ -46,43 +46,39 @@
       </nav>
     </header>
 
-    <main>
-      <h1 class="h1contacto">¿EN QUE PODEMOS AYUDARTE?</h1>
-      <p>
+    <main class="main-contacto">
+      <h2 class="main-contacto-title">¿EN QUE PODEMOS AYUDARTE?</h2>
+      <p class="main-contacto-description">
         ¡Estamos aquí para ayudarte! Completa el formulario a continuación y nos
         pondremos en contacto contigo pronto.
       </p>
 
-      <form id="contacto">
-        <label for="nombre"><b>Nombre:</b></label>
-        <input
-          type="text"
-          id="nombre"
-          name="nombre"
-          required
-          placeholder="Mariano Martin"
-        /><br />
-        <label for="correo"><b>Email:</b></label>
-        <input
-          type="email"
-          id="correo"
-          name="correo"
-          required
-          placeholder="example@email.com"
-        /><br />
-        <label for="mensaje"><b>Mensaje:</b></label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          rows="4"
-          required
-          placeholder="Su mensaje..."
-        ></textarea
-        ><br />
-
-        <button type="submit" class="botonform" onclick="">
-          <b> Enviar </b>
-        </button>
+      <form class="contacto-form" action="*" method="post">
+        <fieldset class="personal-info">
+          <div class="personal-info-input">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" />
+          </div>
+          <div class="personal-info-input">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ej: Perez" />
+          </div>
+          <div class="personal-info-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Ej: juanPerez@gmail.com"/>
+          </div>
+          <div class="personal-info-input">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2616123428"/>
+          </div>
+        </fieldset>
+        <fieldset class="message-info">
+          <div class="personal-info-input">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Dejanos tus dudas"></textarea>
+          </div>
+        </fieldset>
+        <button class="contacto-form-button" type="submit">Enviar</button>
       </form>
     </main>
 
