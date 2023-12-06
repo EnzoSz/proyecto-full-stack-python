@@ -231,6 +231,7 @@ div .card-body {
   cursor: pointer;
 }
 .modal-body {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -238,7 +239,10 @@ div .card-body {
   padding: 1.5rem;
   background-color: #d8c690;
   color: #382e2c;
+  top: 210px;
+  right: 0px;
 }
+
 .modal-body .car-img-top {
   height: 200px;
   width: auto;
