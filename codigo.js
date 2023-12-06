@@ -65,6 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let contenedorPastas;
 
+  // Recuperar el carrito desde el localStorage al cargar la página
+  const carritoGuardado = localStorage.getItem("carrito");
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    contadorCarrito = carrito.reduce((acc, el) => acc + el.cantidad, 0);
+    actualizarContadorCarrito();
+  }
+
   //logica para mostrar los productos en el html
   importarProductos().then((data) => {
     const currentPage = window.location.pathname.split("/").pop();
@@ -117,6 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
               cantidad: 1,
             });
           }
+          // Almacenar el carrito en el localStorage
+          localStorage.setItem("carrito", JSON.stringify(carrito));
           contadorCarrito++;
           actualizarContadorCarrito();
           Swal.fire({
