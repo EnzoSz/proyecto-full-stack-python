@@ -2,7 +2,7 @@
 
 ¡Bienvenido al repositorio de Pasta D'Famiglia! Este proyecto corresponde al desarrollo de un sitio web dedicado a la venta de pastas frescas y artesanales.
 
-![Logo de Pasta D'Famiglia](assets/img/logo.png){:width="20%"}
+![Logo de Pasta D'Famiglia](assets/img/logo.ico)
 
 ## Descripción del Proyecto
 
