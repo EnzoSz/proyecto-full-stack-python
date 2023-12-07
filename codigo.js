@@ -8,18 +8,31 @@ function actualizarContadorCarrito() {
   contadorCarritoSpan.textContent = contadorCarrito.toString();
 }
 
+window.toggleCarrito = function () {
+  console.log("toggleCarrito se llama");
+  var carritoContenido = document.getElementById("carritoContenido");
+
+  // Verifica si el carrito está visible
+  var carritoVisible = carritoContenido.style.right === "0px";
+
+  // Cambia la posición del carrito para mostrar u ocultar
+  carritoContenido.style.right = carritoVisible ? "-800px" : "0px";
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   let carrito = [];
   let ordenDeCompra = null;
   let observer = null;
   let totalDiv;
 
+  contadorCarritoSpan = document.querySelector("#contadorCarrito");
+
   //capturo el contenedor del boton del carrito
-  const verCarrito = document.querySelector("#carrito");
+  const verCarrito = document.querySelector("#carritoIcono");
   //capturo el contenedor de carrito
-  const contenedorModal = document.querySelector("#modal-container");
-  //variable para guardar los productos en el carrito
-  contadorCarritoSpan = document.querySelector("#carrito");
+  const contenedorModal = document.querySelector("#carritoContenido");
+  // Declarar iconoCarrito aquí para asegurarse de que esté definido
+  let iconoCarrito = document.getElementById("carritoIcono");
 
   // Función para iniciar el observer
   function iniciarObserver() {
@@ -147,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       verCarrito.addEventListener("click", () => {
         if (ordenDeCompra === null) {
           ordenDeCompra = document.createElement("div");
-          ordenDeCompra.className = "modal-body";
+          ordenDeCompra.className = "carritoContenido";
           contenedorModal.appendChild(ordenDeCompra);
         }
         iniciarObserver();
@@ -155,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contenedorModal.style.display = "block";
 
-        ordenDeCompra.scrollIntoView({ behavior: "smooth" });
+        toggleCarrito();
       });
     }
   });
@@ -172,8 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carrito.forEach((producto, index) => {
       const productoDiv = document.createElement("div");
+      productoDiv.className = "producto-en-carrito";
       productoDiv.innerHTML = `
-        <img src="${producto.img}" class="card-img-top">
+        <img src="${producto.img}" class="carritoContenidoImg">
         <div class="card-body">
           <h3 class="card-title">${producto.nombre}</h3>
           <p class="card-precio">Precio $ ${producto.precio}</p>
@@ -213,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarOrden();
 
         contadorCarrito--;
-        // actualizarContadorCarrito();
       });
     });
 
@@ -252,12 +265,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
       carrito = [];
       detenerObserver();
-    };
-  }
 
-  // Función para actualizar la orden completa
-  function actualizarOrdenCompleta() {
-    actualizarOrden();
-    actualizarTotal();
+      // Verifica si el carrito está visible antes de ocultarlo
+      const carritoContenido = document.getElementById("carritoContenido");
+      const carritoVisible = carritoContenido.style.right === "0px";
+
+      if (carritoVisible) {
+        toggleCarrito();
+      }
+    };
+
+    function actualizarOrdenCompleta() {
+      actualizarOrden();
+      actualizarTotal();
+
+      if (iconoCarrito && !iconoCarrito.clickEventAdded) {
+        iconoCarrito.addEventListener("click", () => {
+          // Verifica si el carrito está visible antes de llamar a toggleCarrito
+          const carritoContenido = document.getElementById("carritoContenido");
+          const carritoVisible = carritoContenido.style.right === "0px";
+
+          if (!carritoVisible) {
+            toggleCarrito();
+          }
+        });
+
+        // Marca el evento click como agregado para evitar duplicados
+        iconoCarrito.clickEventAdded = true;
+      }
+    }
   }
 });

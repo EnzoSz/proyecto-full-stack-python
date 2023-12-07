@@ -118,6 +118,10 @@ nav a i {
   margin-right: 5px;
 }
 
+.carrito-icon {
+  cursor: pointer;
+}
+
 /* productos */
 
 .listaPastas {
@@ -199,21 +203,23 @@ div .card-body {
   color: #382e2c;
   transition: background-color 0.3s, color 0.3s;
 }
+
 /* carrito */
-.modal-container {
-  /* display: none;  */
-  /* position: fixed; */
-  z-index: 1;
-  left: 0;
-  top: 0;
-  /* width: 100%; */
+
+.carritoContenido {
+  position: fixed;
+  top: 210px;
+  right: 0px;
+  width: 500px;
   height: 100%;
-  /* overflow: auto; */
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 50px;
+  background-color: #d8c690;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease;
+  max-height: 67vh;
+  overflow-y: auto;
 }
 
-.modal-header {
+.carritoContenido-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,34 +227,19 @@ div .card-body {
   background-color: #382e2c;
   color: #d8c690;
 }
-.modal-header .modal-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.modal-header .btn-close {
-  font-size: 2.5rem;
-  color: #d8c690;
-  cursor: pointer;
-}
-.modal-body {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: #d8c690;
-  color: #382e2c;
-  top: 210px;
-  right: 0px;
-}
 
-.modal-body .car-img-top {
-  height: 200px;
+.card-img-top {
+  height: 150px;
   width: auto;
   border-radius: 5px;
 }
-.modal-body .card-body {
+
+.carritoContenidoImg {
+  height: 150px;
+  width: auto;
+  padding-left: 135px;
+}
+.card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -256,45 +247,42 @@ div .card-body {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.modal-body .card-body .card-title {
+.card-body .card-title {
   font-size: 2rem;
   color: #382e2c;
   margin-bottom: 1rem;
 }
-.modal-body .card-body .card-precio {
+.card-body .card-precio {
   font-size: 1.5rem;
   color: #382e2c;
   margin: 1rem;
   text-justify: auto;
 }
+
 .modal-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 1.5rem;
   background-color: #382e2c;
   color: #d8c690;
   border-bottom: 20px solid #d8c690;
 }
+
 .modal-footer .modal-title {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.cantidad-container {
-  display: flex;
-  align-items: center;
-}
-
 .cantidad {
-  margin: 0 10px; /* Ajusta el margen según tu preferencia */
-  font-size: 18px; /* Ajusta el tamaño de fuente según tu preferencia */
+  color: #382e2c;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
 }
 
 .btn-restar,
 .btn-sumar,
 .btn-close {
-  /* Estilo común para los botones */
   background-color: #382e2c;
   color: #d8c690;
   border: none;
@@ -304,19 +292,23 @@ div .card-body {
 }
 
 .btn-close {
+  display: flex;
   margin-bottom: 40px;
+  margin-left: 220px;
 }
 
 #finalizar {
+  display: flex;
+  justify-content: space-around;
   background-color: #382e2c;
   color: #d8c690;
+  margin-bottom: 25px;
   margin-top: 0;
-  /* margin-bottom: px; */
+  margin-left: 135px;
   padding: 10px;
   border-radius: 5px;
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: center;
   width: 200px;
 }
 

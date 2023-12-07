@@ -35,9 +35,13 @@
           <li><a href="./pagina-2.html">PRODUCTOS</a></li>
           <li>¿EN QUE PODEMOS AYUDARTE?</li>
           <li>
-            <a href="pagina-2.html#modal-container">
-              <i id="carrito" class="icon-shopping-cart"></i>
-            </a>
+            <div class="carrito-icon" onclick="toggleCarrito()">
+              <a href="pagina-2.html#modal-container"
+                ><i id="carritoIcono" class="icon-shopping-cart"></i
+              ></a>
+              <span id="contadorCarrito">0</span>
+            </div>
+            <div id="carritoContenido" class="carrito-content"></div>
           </li>
           <li>
             <a href="#">
@@ -110,9 +114,15 @@
 
     <footer class="footer">
       <div class="footiconos">
-        <i class="icon-envelope"></i>
-        <i class="icon-facebook"></i>
-        <i class="icon-instagram"></i>
+        <a href="https://www.gmail.com/mail/help/intl/es/about.html?iframe"
+          ><i class="icon-envelope"></i
+        ></a>
+        <a href="https://www.facebook.com/?locale=es_LA"
+          ><i class="icon-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/accounts/login/"
+          ><i class="icon-instagram"></i
+        ></a>
       </div>
       <p>
         Copyright Grupo 11. Comision 23501 - 2023. Todos los derechos
