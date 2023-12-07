@@ -129,6 +129,7 @@ nav a i {
 }
 
 .card {
+  text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
   /* padding: 20px; */
