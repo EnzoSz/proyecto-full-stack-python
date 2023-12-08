@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de Mensajes</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h1>Tabla de Mensajes</h1>
+        <button id="btnTraerMensajes" class="btn btn-primary mb-3">Traer Mensajes</button>
+        <table id="tablaMensajes" class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>  
+              <th scope="col">Apellido</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Fecha de Envío</th>
+              <th scope="col">Mensaje</th>
+              <th scope="col">Leído</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se llenarán dinámicamente las filas -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container mt-4">
+        <h1>Formulario de Gestión</h1>
+        <form id="formularioContacto">
+          <div class="form-group">
+            <label for="idInput">ID</label>
+            <input type="text" class="form-control" id="idInput" placeholder="Ingrese el ID">
+          </div>
+          <div class="form-group">
+            <label for="detalleInput">Detalle de la Gestión</label>
+            <textarea class="form-control" id="detalleInput" rows="4" placeholder="Ingrese el detalle de la gestión"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+
+<script src="../admin.js"></script>
+</body>
+</html>

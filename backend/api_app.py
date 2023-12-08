@@ -1,5 +1,5 @@
 # instalar flask con pip install flask
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 # instalar flask_cors con pip install flask_cors
 from flask_cors import CORS
 import mysql.connector
@@ -32,15 +32,16 @@ class Mensaje:
                 raise err
         # creamos la tabla mensajes si no existe
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS mensajes (
-            id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(30),
+            id INT AUTO_INCREMENT PRIMARY KEY, 
+            nombre VARCHAR(30) NOT NULL,
             apellido VARCHAR(30) NOT NULL,
             telefono VARCHAR(15) NOT NULL,
             email VARCHAR(60) NOT NULL,
             mensaje VARCHAR(500) NOT NULL,
-            fecha_envio  DATETIME NOT NULL,
+            fecha_envio  datetime NOT NULL,
             leido BOOLEAN NOT NULL DEFAULT FALSE,
             gestion varchar(500) NOT NULL DEFAULT 'Sin gestion',
-            fecha_gestion DATETIME NOT NULL,
+            fecha_gestion datetime DEFAULT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci 
             ''')
         self.conn.commit()
@@ -52,11 +53,12 @@ class Mensaje:
     def enviar_mensaje(self, nombre, apellido, telefono, email, consulta):
         sql = "INSERT INTO mensajes (nombre, apellido, telefono, email, mensaje, fecha_envio) VALUES (%s, %s, %s, %s, %s, %s)"
         # obtenemos la fecha actual
-        fecha = datetime.datetime.now()
+        fecha_envio = datetime.datetime.now()
         valores = (nombre, apellido, telefono, email, consulta, fecha_envio)
         self.cursor.execute(sql, valores)
         self.conn.commit()
-        return true
+        # self.cursor.close()
+        return True
     
     # listar mensajes
     def listar_mensajes(self):
@@ -72,7 +74,7 @@ class Mensaje:
         valores = (gestion, fecha, id)
         self.cursor.execute(sql, valores)
         self.conn.commit()
-        return self.cursor.rowcount > 0
+        return self.cursor.rowcount > 0 # devuelve True si se ha actualizado algún registro
     
     # eliminar mensaje
     def eliminar_mensaje(self, id):
@@ -93,6 +95,7 @@ class Mensaje:
 mensaje = Mensaje( host='localhost', user='root', password='radi4850', database='clientes')
 
 # ruta para listar mensajes
+
 @app.route('/mensajes', methods=['GET'])
 def listar_mensajes():
     respuesta = mensaje.listar_mensajes()
@@ -122,3 +125,14 @@ def responder_mensaje(id):
     else:
         return jsonify({'mensaje': 'Error al responder el mensaje'}), 403
     
+
+# enviar mensaje para comprobar que el servidor está funcionando
+# mensaje.enviar_mensaje("Juan", "Perez", "123456789", "juanPerez@gmail.com", "Hola, esto es un mensaje de prueba")
+
+# respuesta = mensaje.listar_mensajes()
+# print(respuesta)
+# mensaje.responder_mensaje(1, "Mensaje respondido")
+
+# cotrolamos el comportamiento del script cuando se ejecuta
+if __name__ == "__main__":
+    app.run(debug=True)

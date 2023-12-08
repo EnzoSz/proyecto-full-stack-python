@@ -412,6 +412,7 @@ main img {
   background-color: #d8c690;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 2.5rem;
 
 }
 
@@ -477,6 +478,15 @@ main img {
   color: #382e2c;
   transition: background-color 0.3s, color 0.3s;
 }
+
+.mensaje-enviado {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #382e2c;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 /* grid */
 
 .gridh2 {

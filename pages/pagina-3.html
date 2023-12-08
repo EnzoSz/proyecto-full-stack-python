@@ -59,23 +59,23 @@
         pondremos en contacto contigo pronto.
       </p>
 
-      <form class="contacto-form" action="*" method="post">
+      <form class="contacto-form" method="post">
         <fieldset class="personal-info">
           <div class="personal-info-input">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" />
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" required />
           </div>
           <div class="personal-info-input">
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Ej: Perez" />
+            <input type="text" id="apellido" name="apellido" placeholder="Ej: Perez" required />
           </div>
           <div class="personal-info-input">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Ej: juanPerez@gmail.com"/>
+            <input type="email" id="email" name="email" placeholder="Ej: juanPerez@gmail.com" required />
           </div>
           <div class="personal-info-input">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2616123428"/>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2616123428" required/>
           </div>
         </fieldset>
         <fieldset class="message-info">
@@ -86,9 +86,12 @@
         </fieldset>
         <button class="contacto-form-button" type="submit">Enviar</button>
       </form>
+      <section class="mensaje-enviado">
+        <p>Datos enviados</p>
+      </section>
     </main>
 
-    <div class="grid">
+    <!-- <div class="grid">
       <img
         class="gridimagen"
         src="../assets/img/pastasCaseras2.jpg"
@@ -100,7 +103,7 @@
       <a href="../index.html" class="gridlogo">
         <img src="../assets/PASTA D´FAMIGLIA1.png" alt="Logo"
       /></a>
-    </div>
+    </div> -->
 
     <div id="whatsapp-button" class="whatsapp-button">
       <a href="https://wa.me/2243498597" target="_blank">
@@ -134,5 +137,6 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+    <script src="../formulario.js"></script>
   </body>
 </html>
