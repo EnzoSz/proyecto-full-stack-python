@@ -1,49 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Tabla de Mensajes</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabla de Mensajes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@700;900&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!--Logo y Nombre-->
+      <div class="logo">
+        <img
+          src="../assets/PASTA D´FAMIGLIA1.png"
+          alt="Logo del emprendimiento"
+          class="logoimg"
+        />
+        <h1>Pasta D´Famiglia</h1>
 
-</head>
-<body>
+        <button id="menuBoton" class="checkbtn">
+          <img src="./assets/img/icon_menu.svg" alt="menu" class="menu" />
+        </button>
+      </div>
+
+      <!--Navbar-->
+      <nav>
+        <ul class="lista-nav">
+          <li><a href="#">INICIO</a></li>
+          <li>
+            <a href="pagina-2.html">PRODUCTOS</a>
+          </li>
+          <li>
+            <a href="pagina-3.html">¿EN QUE PODEMOS AYUDARTE?</a>
+          </li>
+          <li>
+            <div class="carrito-icon" onclick="toggleCarrito()">
+              <a href="pagina-2.html#modal-container"
+                ><i id="carritoIcono" class="icon-shopping-cart"></i
+              ></a>
+              <span id="contadorCarrito">0</span>
+            </div>
+            <div id="carritoContenido" class="carrito-content"></div>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon-user"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div class="container mt-4">
-        <h1>Tabla de Mensajes</h1>
-        <button id="btnTraerMensajes" class="btn btn-primary mb-3">Traer Mensajes</button>
-        <table id="tablaMensajes" class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Id</th>  
-              <th scope="col">Apellido</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Email</th>
-              <th scope="col">Fecha de Envío</th>
-              <th scope="col">Mensaje</th>
-              <th scope="col">Leído</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Aquí se llenarán dinámicamente las filas -->
-          </tbody>
-        </table>
-      </div>
+      <h1>Tabla de Mensajes</h1>
+      <button id="btnTraerMensajes" class="btn btn-primary mb-3">
+        Traer Mensajes
+      </button>
+      <table id="tablaMensajes" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Fecha de Envío</th>
+            <th scope="col">Mensaje</th>
+            <th scope="col">Leído</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se llenarán dinámicamente las filas -->
+        </tbody>
+      </table>
+    </div>
 
-      <div class="container mt-4">
-        <h1>Formulario de Gestión</h1>
-        <form id="formularioContacto">
-          <div class="form-group">
-            <label for="idInput">ID</label>
-            <input type="text" class="form-control" id="idInput" placeholder="Ingrese el ID">
-          </div>
-          <div class="form-group">
-            <label for="detalleInput">Detalle de la Gestión</label>
-            <textarea class="form-control" id="detalleInput" rows="4" placeholder="Ingrese el detalle de la gestión"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-      </div>
+    <div class="container mt-4">
+      <h1>Formulario de Gestión</h1>
+      <form id="formularioContacto">
+        <div class="form-group">
+          <label for="idInput">ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="idInput"
+            placeholder="Ingrese el ID"
+          />
+        </div>
+        <div class="form-group">
+          <label for="detalleInput">Detalle de la Gestión</label>
+          <textarea
+            class="form-control"
+            id="detalleInput"
+            rows="4"
+            placeholder="Ingrese el detalle de la gestión"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <footer class="footer">
+        <div class="footiconos">
+          <a href="https://www.gmail.com/mail/help/intl/es/about.html?iframe"
+            ><i class="icon-envelope"></i
+          ></a>
+          <a href="https://www.facebook.com/?locale=es_LA"
+            ><i class="icon-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/accounts/login/"
+            ><i class="icon-instagram"></i
+          ></a>
+        </div>
+  
+        <p>
+          Copyright Grupo 11. Comision 23501 - 2023. Todos los derechos
+          reservados. <br />
+          Defensa de consumidores. Para reclamos <strong>ingrese aquí</strong>.
+        </p>
+      </footer>
 
-<script src="../admin.js"></script>
-</body>
+    <script src="../admin.js"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 # instalar flask con pip install flask
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, request
 # instalar flask_cors con pip install flask_cors
 from flask_cors import CORS
 import mysql.connector
@@ -92,7 +92,7 @@ class Mensaje:
         mensaje = self.cursor.fetchone()
         return mensaje
 # creamos una instancia de la clase Mensaje
-mensaje = Mensaje( host='localhost', user='root', password='radi4850', database='clientes')
+mensaje = Mensaje( host='enzosoliz.mysql.pythonanywhere-services.com', user='enzosoliz', password='radi4850', database='enzosoliz$clientes')
 
 # ruta para listar mensajes
 

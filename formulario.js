@@ -4,7 +4,7 @@ document.querySelector(".contacto-form").addEventListener("submit", function(eve
     const formData = new FormData(document.querySelector(".contacto-form"));
     // Realizamos el envio utilizando fetch
     console.log(formData);
-    fetch("http://127.0.0.1:5000/mensajes", {
+    fetch("https://enzosoliz.pythonanywhere.com/mensajes", {
         method: "POST",
         body: formData
     })
